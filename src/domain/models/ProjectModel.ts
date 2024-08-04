@@ -79,7 +79,7 @@ import { generateCode } from "../../utils/functions/generateCode";
  *             - Initiation
  *             - Pre-Construction
  *             - In-Progress
- *             - Compeleted
+ *             - completed
  *           default: Initiation
  *           example: Compeleted
  *         materials:

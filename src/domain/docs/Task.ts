@@ -4,8 +4,8 @@ export interface TaskDoc extends Document {
   title: string;
   description: string;
   status: string;
-  tags: string[] | undefined;
-  assignees: string[] | undefined;
-  priority: string | undefined;
-  dueDate: string | undefined;
+  tags?: string[];
+  assignees?: string[];
+  priority?: string;
+  dueDate?: string;
 }

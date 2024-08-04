@@ -59,7 +59,7 @@ const TaskModel = generateModel<TaskDoc>("Task", {
     required: true,
   },
   tags: {
-    type: String,
+    type: [String],
     required: false,
   },
   priority: {
