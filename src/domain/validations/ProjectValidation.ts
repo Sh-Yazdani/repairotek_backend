@@ -23,7 +23,7 @@ const ProjectValidationSchema = Joi.object({
 
 const ProjectPatchValidationSchema = Joi.object({
   title: Joi.string().optional(),
-  zoneId: Joi.string().required(),
+  zoneId: Joi.string().optional(),
   areaLength: Joi.number().optional(),
   areaWidth: Joi.number().optional(),
   areaHeight: Joi.number().optional(),
