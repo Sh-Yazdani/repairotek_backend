@@ -34,7 +34,7 @@ const seedDatabase = async () => {
 
     // await UserSeeder.seed();
     // await AdminSeeder.seed();
-    await EmployeeSeeder.seed();
+    // await EmployeeSeeder.seed();
     // await OperatorSeeder.seed();
     // await PermissionSeeder.seed();
 
