@@ -30,13 +30,13 @@ import { TaskStatus } from "../../utils/constant/enums/StatusTask";
  *             - InProgress
  *             - Completed
  *            default: "Pending"
-            tags:
+ *           tags:
  *            type: string[]
  *            default: []
-            priority:
-              type: string
-            priority:
-              type: string
+ *          priority:
+ *              type: string
+ *           priority:
+ *             type: string
  */
 
 const TaskModel = generateModel<TaskDoc>("Task", {
