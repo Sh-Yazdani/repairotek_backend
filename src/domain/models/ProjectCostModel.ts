@@ -2,7 +2,6 @@ import { Schema } from "mongoose";
 import { ProjectCostDoc } from "../docs/ProjectCost";
 import { generateModel } from "../../utils/generators/modelGenerator";
 
-
 /**
  * @swagger
  * components:
@@ -17,17 +16,7 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  *         - costDate
  *         - totalCost
  *       properties:
- *         id:
- *           type: string
- *           description: Unique identifier for the project cost entry
- *         createdAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the project cost entry was created
- *         updatedAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the project cost entry was last updated
+ *
  *         projectId:
  *           type: string
  *           format: ObjectId

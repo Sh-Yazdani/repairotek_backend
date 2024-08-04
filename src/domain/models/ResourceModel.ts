@@ -10,17 +10,6 @@ import { ResourceDoc } from "../docs/Resource";
  *       required:
  *         - name
  *       properties:
- *         id:
- *           type: string
- *           description: Unique identifier for the admin
- *         createdAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the admin was created
- *         updatedAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the admin was last updated
  *         name:
  *           type: string
  *           description: Name of the resource

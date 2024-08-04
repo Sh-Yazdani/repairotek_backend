@@ -1,7 +1,5 @@
-
 import { RoadDoc } from "../docs/Road";
 import { generateModel } from "../../utils/generators/modelGenerator";
-
 
 /**
  * @swagger
@@ -12,17 +10,6 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  *       required:
  *         - name
  *       properties:
- *         id:
- *           type: string
- *           description: Unique identifier for the admin
- *         createdAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the admin was created
- *         updatedAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the admin was last updated
  *         name:
  *           type: string
  *           description: The name of the road
@@ -59,8 +46,7 @@ const RoadModel = generateModel<RoadDoc>("Road", {
   length: { type: Number, required: false },
   condition: { type: String, required: false },
   type: { type: String, required: false },
-  decription: { type: String, },
+  decription: { type: String },
 });
 
 export default RoadModel;
-

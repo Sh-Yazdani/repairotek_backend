@@ -13,6 +13,7 @@ import swaggerUi from "swagger-ui-express";
 import swaggerOptions from "../config/swagger";
 import helmet from "helmet";
 import updateLastActivityMiddleware from "./middlewares/updateLastActivityMiddleware";
+import { log } from "console";
 
 dotenv.config();
 const app: Application = express();
@@ -25,6 +26,7 @@ const sessionMiddleware = session({
   saveUninitialized: false,
 });
 
+log("got here so far");
 connentDB();
 
 app.use(cors());

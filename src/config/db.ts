@@ -6,7 +6,6 @@ const connectDB = async () => {
     process.env.ENV_MODE === "production"
       ? process.env.DB_URL_PRODUCTION!
       : process.env.DB_URL!;
-
   if (process.env.ENV_MODE) {
     dbUrl =
       process.env.ENV_MODE === "develop"
