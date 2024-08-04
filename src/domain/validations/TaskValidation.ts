@@ -17,6 +17,9 @@ const TaskValidationSchema = Joi.object({
       "any.only": "Status must be one of Pending, InProgress, Completed",
       "any.required": "Status is required",
     }),
+  tags: Joi.string(),
+  priority: Joi.string(),
+  dueDate: Joi.string(),
 });
 
 const TaskPatchValidationSchema = Joi.object({
@@ -35,5 +38,8 @@ const TaskPatchValidationSchema = Joi.object({
       "any.only": "Status must be one of Pending, InProgress, Completed",
       "any.required": "Status is required",
     }),
+  tags: Joi.string(),
+  priority: Joi.string(),
+  dueDate: Joi.string(),
 });
 export { TaskPatchValidationSchema, TaskValidationSchema };

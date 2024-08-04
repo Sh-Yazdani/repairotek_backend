@@ -8,9 +8,7 @@ import { EquipmentDoc } from "../docs/Equipment";
  *       type: object
  *       description: Schema for equipment details
  *       properties:
- *         id:
- *           type: string
- *           description: Unique identifier for the equipment
+ *
  *         name:
  *           type: string
  *           description: Name of the equipment

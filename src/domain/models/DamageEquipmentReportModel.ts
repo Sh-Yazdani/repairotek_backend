@@ -21,7 +21,6 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  *         - createdBy
  *         - equipmentId
  *       properties:
- *         id:
  *         title:
  *           type: string
  *           description: Title of the report

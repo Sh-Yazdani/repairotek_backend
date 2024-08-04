@@ -21,17 +21,7 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  *         - createdBy
  *         - employeeId
  *       properties:
- *         id:
- *           type: string
- *           description: Unique identifier for the report
- *         createdAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the report was created
- *         updatedAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the report was last updated
+ *
  *         title:
  *           type: string
  *           description: Title of the report
@@ -83,7 +73,6 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  *         employeeId: "60c72b2f9b1d8c001f8e4cbf"
  */
 
-
 ///////////// Discriminat //////////////////
 const InjuryEmployeeReportModel = generateModel<InjuryEmployeeReportDoc>(
   "InjuryEmployeeReport",
@@ -95,7 +84,7 @@ const InjuryEmployeeReportModel = generateModel<InjuryEmployeeReportDoc>(
     },
   },
   ["__t"],
-  ReportModel
+  ReportModel,
 );
 
 export default InjuryEmployeeReportModel;

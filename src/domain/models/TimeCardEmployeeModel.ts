@@ -23,17 +23,6 @@ import { TimeCardEmployeeDoc } from "../docs/TimeCardEmployee";
  *         - createdBy
  *         - updatedBy
  *       properties:
- *         id:
- *           type: string
- *           description: Unique identifier for the admin
- *         createdAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the admin was created
- *         updatedAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the admin was last updated
  *         employeeId:
  *           type: string
  *           description: ID of the employee

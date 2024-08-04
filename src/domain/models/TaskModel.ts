@@ -30,6 +30,13 @@ import { TaskStatus } from "../../utils/constant/enums/StatusTask";
  *             - InProgress
  *             - Completed
  *            default: "Pending"
+ *           tags:
+ *            type: string[]
+ *            default: []
+ *          priority:
+ *              type: string
+ *           priority:
+ *             type: string
  */
 
 const TaskModel = generateModel<TaskDoc>("Task", {
@@ -50,6 +57,18 @@ const TaskModel = generateModel<TaskDoc>("Task", {
     enum: Object.values(TaskStatus),
     default: TaskStatus.Pending,
     required: true,
+  },
+  tags: {
+    type: String,
+    required: false,
+  },
+  priority: {
+    type: String,
+    required: false,
+  },
+  dueDate: {
+    type: String,
+    required: false,
   },
 });
 
