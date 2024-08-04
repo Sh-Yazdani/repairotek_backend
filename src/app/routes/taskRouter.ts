@@ -114,7 +114,7 @@ taskRouter.post("/tasks", TaskController.create);
  *         description: Task not found
  */
 
-taskRouter.put("/tasks/:id", TaskController.update);
+taskRouter.put("/tasks/:id", TaskController.edit);
 taskRouter.patch("/tasks/:id", TaskController.edit);
 
 /**

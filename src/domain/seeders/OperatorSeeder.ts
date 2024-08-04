@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 import logger from "../../utils/helpers/logger";
-import EmployeeModel from "../models/EmployeeModel";
+import OperatorModel from "../models/OperatorModel";
 import RoleModel from "../models/RoleModel";
 import JobModel from "../models/JobModel";
 import DepartmentModel from "../models/unUse/DepartmentModel";
@@ -8,35 +8,35 @@ import { ContractType } from "../../utils/constant/ContractType";
 import { MaritalStatus } from "../../utils/constant/MaritalStatus";
 import { generateCode } from "../../utils/functions/generateCode";
 
-export class EmployeeSeeder {
-  static removeAllEmployees = async () => {
+export class OperatorSeeder {
+  static removeAllOperators = async () => {
     try {
-      await EmployeeModel.deleteMany({});
-      logger.info("All employees removed successfully.");
+      await OperatorModel.deleteMany({});
+      logger.info("All operators removed successfully.");
     } catch (error: any) {
-      logger.error("Failed to remove employees: " + error.message);
+      logger.error("Failed to remove operators: " + error.message);
     }
   };
 
-  static insertEmployees = async (batchSize = 10) => {
+  static insertOperators = async (batchSize = 10) => {
     try {
-      const role = await RoleModel.findOne({ name: "Employee" });
+      const role = await RoleModel.findOne({ name: "Operator" });
       const jobs = await JobModel.find({});
 
       if (!role || !jobs.length) {
         logger.error(
-          "Please ensure that role and jobs are populated before seeding employees."
+          "Please ensure that role and jobs are populated before seeding operators."
         );
         return;
       }
 
-      const employees = [];
+      const operators = [];
 
       for (let i = 0; i < batchSize; i++) {
         // const job = faker.helpers.arrayElement(jobs).id;
         const job = jobs[Math.floor(Math.random() * jobs.length)];
 
-        employees.push({
+        operators.push({
           firstName: faker.person.firstName(),
           lastName: faker.person.lastName(),
           gender: faker.person.sex(),
@@ -50,8 +50,8 @@ export class EmployeeSeeder {
           lastActivity: faker.date.recent().getTime(),
           nationalId: faker.number.int({ min: 1000000000, max: 9999999999 }), // Assuming national ID is a 10-digit number
           permissions: [],
-          employeeCode: generateCode("EMP"),
-          // hireDate: faker.date.past(),
+          operatorCode: generateCode("OPR"),
+          hireDate: faker.date.past(),
           // jobId: job.id,
           // skillDescription: faker.lorem.sentence(),
           // description: faker.lorem.paragraph(),
@@ -60,29 +60,29 @@ export class EmployeeSeeder {
           //   refDate: "2024-01-01T00:00:00.000Z",
           // }), // Random date of birth in the past 30 years
           // maritalStatus: faker.helpers.arrayElement(MaritalStatus),
-          yearsOfExperience: faker.number.int({ min: 1, max: 40 }),
-          contractType: faker.helpers.arrayElement(ContractType),
-          bankAccountInfo: `
-            Credit Card Number:${faker.finance.creditCardNumber(
-              "63[7-9]#-####-####-###L"
-            )}
-            Accunt Number:${faker.finance.accountNumber()}
-           `,
-          insuranceNumber: faker.number
-            .int({ min: 1000000000, max: 9999999999 })
-            .toString(), // Assuming insurance number is a 10-digit number
+          // yearsOfExperience: faker.number.int({ min: 1, max: 40 }),
+          // contractType: faker.helpers.arrayElement(ContractType),
+          // bankAccountInfo: `
+          //   Credit Card Number:${faker.finance.creditCardNumber(
+          //     "63[7-9]#-####-####-###L"
+          //   )}
+          //   Accunt Number:${faker.finance.accountNumber()}
+          //  `,
+          // insuranceNumber: faker.number
+          //   .int({ min: 1000000000, max: 9999999999 })
+          //   .toString(), // Assuming insurance number is a 10-digit number
         });
       }
 
-      await EmployeeModel.insertMany(employees);
-      logger.info(batchSize + " employees seeded successfully.");
+      await OperatorModel.insertMany(operators);
+      logger.info(batchSize + " operators seeded successfully.");
     } catch (error: any) {
-      logger.error("Failed to seed employees: " + error.message);
+      logger.error("Failed to seed operators: " + error.message);
     }
   };
 
   static seed = async () => {
-    await this.removeAllEmployees();
-    await this.insertEmployees();
+    await this.removeAllOperators();
+    await this.insertOperators();
   };
 }

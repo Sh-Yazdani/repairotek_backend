@@ -17,12 +17,12 @@ export const generateServiceFile = async (
 import { ${resourceNameUC}Doc } from "../docs/${resourceNameUC}";
 import BaseService from "./BaseService";
 import ${resourceNameUC}Repository from "../repositories/${resourceNameUC}Repository";
-import {${resourceNameUC}ValidationSchema, } from "../validations/${resourceNameUC}Validation";
+import {${resourceNameUC}ValidationSchema, {${resourceNameUC}PatchValidationSchema} from "../validations/${resourceNameUC}Validation";
 
 class ${resourceNameUC}Service extends BaseService<${resourceNameUC}Doc> {
   private ${resourceNameLC}Repository = this.repository as typeof ${resourceNameUC}Repository;
   constructor() {
-    super(${resourceNameUC}Repository, ${resourceNameUC}ValidationSchema, );
+    super(${resourceNameUC}Repository, ${resourceNameUC}ValidationSchema,{${resourceNameUC}PatchValidationSchema );
   }
 }
 export default new ${resourceNameUC}Service();

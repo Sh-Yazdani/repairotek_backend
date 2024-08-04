@@ -21,32 +21,36 @@ import { DamageEquipmentReportSeeder } from "./DamageEquipmentReportModelSeeder"
 import { InjuryEmployeeReportSeeder } from "./InjuryEmployeeReportSeeder";
 import { TaskSeeder } from "./TaskSeeder";
 import { TimeCardEmployeeSeeder } from "./TimeCardEmployeeSeeder";
+import { OperatorSeeder } from "./OperatorSeeder";
+
 
 const seedDatabase = async () => {
   try {
-    await connectDB();
+    await connectDB(true);
 
-    await RoleSeeder.seed();
-    await ResourceSeeder.seed();
-    await JobSeeder.seed();
+    // await RoleSeeder.seed();
+    // await ResourceSeeder.seed();
+    // await JobSeeder.seed();
 
-    await AdminSeeder.seed();
+    // await UserSeeder.seed();
+    // await AdminSeeder.seed();
     await EmployeeSeeder.seed();
-    await PermissionSeeder.seed();
+    // await OperatorSeeder.seed();
+    // await PermissionSeeder.seed();
 
-    await MaterialSeeder.seed();
-    await EquipmentSeeder.seed();
+    // await MaterialSeeder.seed();
+    // await EquipmentSeeder.seed();
 
-    await ProjectSeeder.seed();
-    await AssetSeeder.seed();
+    // await ProjectSeeder.seed();
+    // await AssetSeeder.seed();
 
-    await ReportSubjectSeeder.seed();
-    await ProjectGallerySubjectSeeder.seed();
-    await ProjectGallerySeeder.seed();
+    // await ReportSubjectSeeder.seed();
+    // await ProjectGallerySubjectSeeder.seed();
+    // await ProjectGallerySeeder.seed();
 
-    await DailyReportSeeder.seed();
-    await DamageEquipmentReportSeeder.seed();
-    await InjuryEmployeeReportSeeder.seed();
+    // await DailyReportSeeder.seed();
+    // await DamageEquipmentReportSeeder.seed();
+    // await InjuryEmployeeReportSeeder.seed();
 
     // await TaskSeeder.seed();
     // await TimeCardEmployeeSeeder.seed();

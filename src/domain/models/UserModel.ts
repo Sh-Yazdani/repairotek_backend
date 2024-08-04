@@ -125,7 +125,7 @@ const UserModel = generateModel<UserDoc>(
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
     gender: { type: String, enum: Gender, required: true },
-    email: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
     address: { type: String, required: true },
     telephone: { type: String, required: false },
     mobile: { type: String, required: true },

@@ -23,7 +23,7 @@ const TaskValidationSchema = Joi.object({
 });
 
 const TaskPatchValidationSchema = Joi.object({
-  title: Joi.string().required().messages({
+  title: Joi.string().optional().messages({
     "string.base": "Title should be a string",
     "any.required": "Title is required",
   }),
@@ -32,7 +32,7 @@ const TaskPatchValidationSchema = Joi.object({
   }),
   status: Joi.string()
     .valid(...Object.values(TaskStatus))
-    .required()
+    .optional()
     .messages({
       "string.base": "Status should be a string",
       "any.only": "Status must be one of Pending, InProgress, Completed",

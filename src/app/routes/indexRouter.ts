@@ -32,6 +32,7 @@ import IndexController from "../controllers/IndexController";
 import materialRouter from "./materialRouter";
 import jobRouter from "./jobRouter";
 import roadRouter from "./roadRouter";
+import operatorRouter from "./operatorRouter";
 const indexRouter = express.Router();
 
 /**
@@ -56,6 +57,7 @@ indexRouter.use(projectAssignmentRouter);
 indexRouter.use(timeCardEmployeeRouter);
 indexRouter.use(taskRouter);
 indexRouter.use(employeeRouter);
+indexRouter.use(operatorRouter);
 indexRouter.use(equipmentRouter);
 indexRouter.use(provinceRouter);
 indexRouter.use(roleRouter);

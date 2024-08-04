@@ -90,8 +90,8 @@ const EmployeeModel = generateModel<EmployeeDoc>(
     employeeCode: {
       type: String,
       required: true,
+      default: () => generateCode("EMP"),
       unique: true,
-      default: generateCode("E"),
     },
     hireDate: { type: Date, required: false },
     jobId: { type: Schema.Types.ObjectId, ref: "Job", required: false },

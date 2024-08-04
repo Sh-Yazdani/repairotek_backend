@@ -136,7 +136,7 @@ projectRouter.post(
 projectRouter.put(
   "/projects/:id",
   AuthMiddleware.isAdmin,
-  ProjectController.update
+  ProjectController.edit
 );
 
 projectRouter.patch(
