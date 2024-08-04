@@ -30,12 +30,12 @@ import { TaskStatus } from "../../utils/constant/enums/StatusTask";
  *             - InProgress
  *             - Completed
  *            default: "Pending"
- *           tags:
+ *         tags:
  *            type: string[]
  *            default: []
- *          priority:
+ *         priority:
  *              type: string
- *           priority:
+ *         dueDate:
  *             type: string
  */
 
