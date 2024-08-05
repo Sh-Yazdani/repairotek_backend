@@ -113,7 +113,7 @@ materialRouter.post("/materials", MaterialController.create);
  *         description: Material not found
  */
 
-materialRouter.put("/materials/:id", MaterialController.update);
+materialRouter.put("/materials/:id", MaterialController.edit);
 materialRouter.patch("/materials/:id", MaterialController.edit);
 
 /**
@@ -136,6 +136,5 @@ materialRouter.patch("/materials/:id", MaterialController.edit);
  */
 
 materialRouter.delete("/materials/:id", MaterialController.delete);
-
 
 export default materialRouter;

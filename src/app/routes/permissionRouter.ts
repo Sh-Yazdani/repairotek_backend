@@ -114,7 +114,7 @@ permissionRouter.post("/permissions", PermissionController.create);
  *         description: Permission not found
  */
 
-permissionRouter.put("/permissions/:id", PermissionController.update);
+permissionRouter.put("/permissions/:id", PermissionController.edit);
 permissionRouter.patch("/permissions/:id", PermissionController.edit);
 
 /**
@@ -141,4 +141,3 @@ permissionRouter.patch("/permissions/:id", PermissionController.edit);
 permissionRouter.delete("/permissions/:id", PermissionController.delete);
 
 export default permissionRouter;
-

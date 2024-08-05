@@ -1,4 +1,3 @@
-
 import express from "express";
 import OperatorController from "../controllers/OperatorController";
 
@@ -117,7 +116,7 @@ operatorRouter.post("/operators", OperatorController.create);
  *       500:
  *         description: Server error
  */
-operatorRouter.put("/operators/:id", OperatorController.update);
+operatorRouter.put("/operators/:id", OperatorController.edit);
 operatorRouter.patch("/operators/:id", OperatorController.edit);
 
 /**

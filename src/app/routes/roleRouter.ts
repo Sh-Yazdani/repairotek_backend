@@ -114,7 +114,7 @@ roleRouter.post("/roles", RoleController.create);
  *         description: Role not found
  */
 
-roleRouter.put("/roles/:id", RoleController.update);
+roleRouter.put("/roles/:id", RoleController.edit);
 roleRouter.patch("/roles/:id", RoleController.edit);
 
 /**

@@ -1,7 +1,6 @@
 import express from "express";
 import EquipmentController from "../controllers/EquipmentController";
 
-
 const equipmentRouter = express.Router();
 
 /**
@@ -119,7 +118,7 @@ equipmentRouter.post("/equipment", EquipmentController.create);
  *       500:
  *         description: An unknown error occurred
  */
-equipmentRouter.put("/equipment/:id", EquipmentController.update);
+equipmentRouter.put("/equipment/:id", EquipmentController.edit);
 equipmentRouter.patch("/equipment/:id", EquipmentController.edit);
 
 /**

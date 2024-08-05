@@ -114,7 +114,7 @@ projectCostRouter.post("/projectCosts", ProjectCostController.create);
  *         description: Project cost not found
  */
 
-projectCostRouter.put("/projectCosts/:id", ProjectCostController.update);
+projectCostRouter.put("/projectCosts/:id", ProjectCostController.edit);
 projectCostRouter.patch("/projectCosts/:id", ProjectCostController.edit);
 
 /**
@@ -141,4 +141,3 @@ projectCostRouter.patch("/projectCosts/:id", ProjectCostController.edit);
 projectCostRouter.delete("/projectCosts/:id", ProjectCostController.delete);
 
 export default projectCostRouter;
-
