@@ -1,6 +1,7 @@
 import { TaskDoc } from "../docs/Task";
 import { generateModel } from "../../utils/generators/modelGenerator";
 import { TaskStatus } from "../../utils/constant/enums/StatusTask";
+import { Schema } from "mongoose";
 
 /**
  * @swagger
@@ -59,8 +60,13 @@ const TaskModel = generateModel<TaskDoc>("Task", {
     required: true,
   },
   tags: {
-    type: [String],
-    required: false,
+   type: [
+      {
+        type: String,
+       required:false
+      },
+    ],
+    default: [],
   },
   priority: {
     type: String,
@@ -69,6 +75,16 @@ const TaskModel = generateModel<TaskDoc>("Task", {
   dueDate: {
     type: String,
     required: false,
+  },
+  assignees: {
+    type: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+    required:false,
+    default: [],
   },
 });
 
