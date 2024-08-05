@@ -17,9 +17,16 @@ const TaskValidationSchema = Joi.object({
       "any.only": "Status must be one of Pending, InProgress, Completed",
       "any.required": "Status is required",
     }),
-  tags: Joi.string(),
-  priority: Joi.string(),
-  dueDate: Joi.string(),
+  tags: Joi.array().items(Joi.string()).optional().messages({
+    "array.base": "Tags should be an array",
+    "string.base": "Each tag should be a string",
+  }),
+  priority: Joi.string().optional(),
+  dueDate: Joi.string().optional(),
+  assignees: Joi.array().items(Joi.string()).optional().messages({
+    "array.base": "Assignees should be an array",
+    "string.base": "Each assignee should be a string",
+  }),
 });
 
 const TaskPatchValidationSchema = Joi.object({
@@ -38,8 +45,16 @@ const TaskPatchValidationSchema = Joi.object({
       "any.only": "Status must be one of Pending, InProgress, Completed",
       "any.required": "Status is required",
     }),
-  tags: Joi.string(),
-  priority: Joi.string(),
-  dueDate: Joi.string(),
+  tags: Joi.array().items(Joi.string()).optional().messages({
+    "array.base": "Tags should be an array",
+    "string.base": "Each tag should be a string",
+  }),
+  priority: Joi.string().optional(),
+  dueDate: Joi.string().optional(),
+  assignees: Joi.array().items(Joi.string()).optional().messages({
+    "array.base": "Assignees should be an array",
+    "string.base": "Each assignee should be a string",
+  }),
 });
+
 export { TaskPatchValidationSchema, TaskValidationSchema };
