@@ -31,7 +31,7 @@ import { Schema } from "mongoose";
  *              - todo
  *              - doing
  *              - done
- *            default: "Pending"
+ *            default: "doing"
  *         tags:
  *            type: string[]
  *            default: []
