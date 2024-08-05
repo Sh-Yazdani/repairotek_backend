@@ -58,6 +58,7 @@ const TaskPatchValidationSchema = Joi.object({
         ", "
       )}`,
     }),
+
   tags: Joi.array()
     .items(Joi.string().valid(...TagTask))
     .optional()
