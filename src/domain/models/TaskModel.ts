@@ -58,10 +58,12 @@ const TaskModel = generateModel<TaskDoc>("Task", {
     default: TaskStatus.Pending,
     required: true,
   },
-  tags: {
-    type: String,
-    required: false,
-  },
+  tags: [
+    {
+      type: String,
+      required: false,
+    },
+  ],
   priority: {
     type: String,
     required: false,
