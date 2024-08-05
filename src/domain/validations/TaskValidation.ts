@@ -17,7 +17,7 @@ const TaskValidationSchema = Joi.object({
       "any.only": "Status must be one of Pending, InProgress, Completed",
       "any.required": "Status is required",
     }),
-  tags: Joi.string(),
+  tags: Joi.array().items(Joi.string()).required(),
   priority: Joi.string(),
   dueDate: Joi.string(),
 });
@@ -38,7 +38,7 @@ const TaskPatchValidationSchema = Joi.object({
       "any.only": "Status must be one of Pending, InProgress, Completed",
       "any.required": "Status is required",
     }),
-  tags: Joi.string(),
+  tags: Joi.array().items(Joi.string()).required(),
   priority: Joi.string(),
   dueDate: Joi.string(),
 });
