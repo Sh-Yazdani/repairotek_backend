@@ -49,19 +49,37 @@ imageRouter.get("/images", ImageController.getAll);
  */
 
 imageRouter.get("/images/:id", ImageController.getById);
-
 /**
  * @swagger
- * /Images:
+ * /images:
  *   post:
  *     summary: Create a new Image
  *     tags: [Images]
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
- *             $ref: '#/components/schemas/Images'
+ *             type: object
+ *             properties:
+ *               image:
+ *                 type: string
+ *                 format: binary
+ *               title:
+ *                  type: string
+ *                  required: true
+ *               location:
+ *                 type: string
+ *                 required: true
+ *               time:
+ *                 type: string
+ *                 format: date-time
+ *                 required: true
+ *               description:
+ *                 type: string
+ *                 required: false
+ *                 default: "image description"
+ *               # Include other properties from your Image schema here if any
  *     responses:
  *       201:
  *         description: The created Image

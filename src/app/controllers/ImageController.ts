@@ -5,8 +5,10 @@ import { setupFileUpload } from "../../config/multer";
 import ImageService from "../../domain/services/ImageService";
 import { Request, Response, NextFunction } from "express";
 import ImageModel from "../../domain/models/ImageModel";
-import { unlink } from "fs";
+import { unlink, existsSync, mkdirSync, renameSync } from "fs";
 import { join } from "path";
+import { log } from "console";
+const UPLOAD_DIR = "uploads";
 
 class ImageController extends BaseController<ImageDoc> {
   private imageService = this.service as typeof ImageService;
@@ -27,21 +29,24 @@ class ImageController extends BaseController<ImageDoc> {
         return res.status(400).json({ error: "No image file uploaded" });
       }
 
+      if (!existsSync(UPLOAD_DIR)) {
+        mkdirSync(UPLOAD_DIR, { recursive: true });
+      }
+      const file = req.file;
+      // Generate a unique filename
+      const filename = `${Date.now()}-${file.originalname}`;
+      const filepath = join(UPLOAD_DIR, filename);
+
+      // Move the file from temp location to our upload directory
+      renameSync(file.path, filepath);
+
       let imageData: Partial<ImageDoc>;
-      try {
-        imageData = JSON.parse(req.body.data);
-      } catch (error) {
-        return res.status(400).json({ error: "Invalid JSON data" });
-      }
-
-      if (!imageData.title || !imageData.location) {
-        return res.status(400).json({ error: "Missing required fields" });
-      }
-
+      const { title, location, description } = req.body;
+      const time = req.body.time ? new Date(req.body.time) : new Date();
       const newImage: ImageDoc = new ImageModel({
-        title: imageData.title,
-        description: imageData.description || "",
-        location: imageData.location,
+        title: title,
+        description: description || "",
+        location: location,
         url: `/uploads/images/${req.file.filename}`,
         time: new Date(),
       });
