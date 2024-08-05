@@ -14,6 +14,8 @@ import swaggerOptions from "../config/swagger";
 import helmet from "helmet";
 import updateLastActivityMiddleware from "./middlewares/updateLastActivityMiddleware";
 import { log } from "console";
+import { setupFileUpload } from "../config/multer";
+import { Multer } from "multer";
 
 dotenv.config();
 const app: Application = express();
@@ -26,8 +28,8 @@ const sessionMiddleware = session({
   saveUninitialized: false,
 });
 
-log("got here so far");
 connentDB();
+const upload: Multer = setupFileUpload();
 
 app.use(cors());
 app.use(express.json());
@@ -46,6 +48,8 @@ app.use(
   "/api-docs/swagger-ui",
   express.static(path.join(__dirname, "../../node_modules/swagger-ui-dist")),
 );
+
+app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 
 app.use(express.static(path.join(__dirname, "../../public")));
 
