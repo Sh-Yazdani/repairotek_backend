@@ -3,6 +3,7 @@ import { TaskDoc } from "../docs/Task";
 import { generateModel } from "../../utils/generators/modelGenerator";
 import { TaskStatus } from "../../utils/constant/enums/StatusTask";
 import { Schema } from "mongoose";
+import { TagTask } from "../../utils/constant/TagTask";
 
 /**
  * @swagger
@@ -31,27 +32,36 @@ import { Schema } from "mongoose";
  *              - todo
  *              - doing
  *              - done
- *            default: "doing"
+ *            default: "todo"
  *         tags:
- *            type: string[]
+ *            type: array
  *            default: []
- *            enum:
- *              - none
- *              - critical
- *              - very-high
- *              - high
- *              - medium
- *              - low
- *              - very-low
+ *            items:
+ *              type: string
+ *              enum:
+ *                - bug
+ *                - change
+ *                - issue
+ *                - meeting
+ *                - request
+ *                - risk
+ *                - ticket
  *         assignees:
- *            type: string[]
+ *            type: array
  *            items:
  *              type: string
  *            default: []
  *            description: List of User IDs.
- *            example: [60c72b2f9b1e8c6f2f8a5e56, 60c72b2f9b1e8c6f2f8a5e55]
+ *            example: ["60c72b2f9b1e8c6f2f8a5e56", "60c72b2f9b1e8c6f2f8a5e55"]
  *         priority:
- *              type: string
+ *            type: string
+ *            enum:
+ *               - critical
+ *               - very-high
+ *               - high
+ *               - medium
+ *               - low
+ *               - very-low
  *         dueDate:
  *             type: string
  */
@@ -79,6 +89,7 @@ const TaskModel = generateModel<TaskDoc>("Task", {
     type: [
       {
         type: String,
+        enum: TagTask,
         required: false,
       },
     ],
