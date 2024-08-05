@@ -32,9 +32,9 @@ import { TagTask } from "../../utils/constant/TagTask";
  *              - todo
  *              - doing
  *              - done
- *            default: "todo"
+ *            default: "doing"
  *         tags:
- *            type: array
+ *            type: string[]
  *            default: []
  *            items:
  *              type: string
@@ -47,12 +47,12 @@ import { TagTask } from "../../utils/constant/TagTask";
  *                - risk
  *                - ticket
  *         assignees:
- *            type: array
+ *            type: string[]
  *            items:
  *              type: string
  *            default: []
  *            description: List of User IDs.
- *            example: ["60c72b2f9b1e8c6f2f8a5e56", "60c72b2f9b1e8c6f2f8a5e55"]
+ *            example: [60c72b2f9b1e8c6f2f8a5e56, 60c72b2f9b1e8c6f2f8a5e55]
  *         priority:
  *            type: string
  *            enum:
