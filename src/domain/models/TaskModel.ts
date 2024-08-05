@@ -63,7 +63,7 @@ const TaskModel = generateModel<TaskDoc>("Task", {
    type: [
       {
         type: String,
-        ref: "User",
+       required:false
       },
     ],
     default: [],
@@ -83,6 +83,7 @@ const TaskModel = generateModel<TaskDoc>("Task", {
         ref: "User",
       },
     ],
+    required:false,
     default: [],
   },
 });
