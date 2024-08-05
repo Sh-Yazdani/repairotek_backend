@@ -19,6 +19,7 @@ class ProjectRepository extends BaseRepository<ProjectDoc> {
         .populate("employees")
         .populate("materials")
         .populate("equipment")
+        .populate("equipment")
         .exec();
     } catch (error) {
       throw new Error(`Failed to fetch data: ${error}`);

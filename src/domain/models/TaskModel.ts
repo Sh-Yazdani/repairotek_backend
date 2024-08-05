@@ -1,7 +1,9 @@
+import { PriorityTask } from "./../../utils/constant/PriorityTask";
 import { TaskDoc } from "../docs/Task";
 import { generateModel } from "../../utils/generators/modelGenerator";
 import { TaskStatus } from "../../utils/constant/enums/StatusTask";
 import { Schema } from "mongoose";
+import { TagTask } from "../../utils/constant/TagTask";
 
 /**
  * @swagger
@@ -27,13 +29,23 @@ import { Schema } from "mongoose";
  *            type: string
  *            description: Status of the task
  *            enum:
- *             - Pending
- *             - InProgress
- *             - Completed
- *            default: "Pending"
+ *              - todo
+ *              - doing
+ *              - done
+ *            default: "doing"
  *         tags:
  *            type: string[]
  *            default: []
+ *            items:
+ *              type: string
+ *              enum:
+ *                - bug
+ *                - change
+ *                - issue
+ *                - meeting
+ *                - request
+ *                - risk
+ *                - ticket
  *         assignees:
  *            type: string[]
  *            items:
@@ -42,7 +54,14 @@ import { Schema } from "mongoose";
  *            description: List of User IDs.
  *            example: [60c72b2f9b1e8c6f2f8a5e56, 60c72b2f9b1e8c6f2f8a5e55]
  *         priority:
- *              type: string
+ *            type: string
+ *            enum:
+ *               - critical
+ *               - very-high
+ *               - high
+ *               - medium
+ *               - low
+ *               - very-low
  *         dueDate:
  *             type: string
  */
@@ -63,13 +82,14 @@ const TaskModel = generateModel<TaskDoc>("Task", {
   status: {
     type: String,
     enum: Object.values(TaskStatus),
-    default: TaskStatus.Pending,
+    default: TaskStatus.Todo,
     required: true,
   },
   tags: {
     type: [
       {
         type: String,
+        enum: TagTask,
         required: false,
       },
     ],
@@ -77,6 +97,7 @@ const TaskModel = generateModel<TaskDoc>("Task", {
   },
   priority: {
     type: String,
+    enum: PriorityTask,
     required: false,
   },
   dueDate: {
