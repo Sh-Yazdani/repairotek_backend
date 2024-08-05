@@ -89,6 +89,7 @@ const EmployeeValidationSchema = Joi.object({
   insuranceNumber: Joi.number().optional().messages({
     "number.base": "Insurance number should be a number",
   }),
+  nationalId: Joi.number().optional(),
 });
 
 const EmployeePatchValidationSchema = Joi.object({
@@ -168,6 +169,7 @@ const EmployeePatchValidationSchema = Joi.object({
   insuranceNumber: Joi.number().optional().messages({
     "number.base": "Insurance number should be a number",
   }),
+  nationalId: Joi.number().optional(),
 });
 
 export { EmployeeValidationSchema, EmployeePatchValidationSchema };
