@@ -22,6 +22,11 @@ export class TaskSeeder {
           title: faker.lorem.words(5),
           description: faker.lorem.paragraph(),
           status: faker.helpers.arrayElement(Object.values(TaskStatus)),
+          {
+
+    "dueDate": "2024-08-29T20:30:00.000Z",
+    "priority": "very-high",
+  }
         });
       }
 

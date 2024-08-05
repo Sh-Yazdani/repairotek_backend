@@ -1,3 +1,4 @@
+import { PriorityTask } from "./../../utils/constant/PriorityTask";
 import { TaskDoc } from "../docs/Task";
 import { generateModel } from "../../utils/generators/modelGenerator";
 import { TaskStatus } from "../../utils/constant/enums/StatusTask";
@@ -27,13 +28,21 @@ import { Schema } from "mongoose";
  *            type: string
  *            description: Status of the task
  *            enum:
- *             - Pending
- *             - InProgress
- *             - Completed
+ *              - todo
+ *              - doing
+ *              - done
  *            default: "Pending"
  *         tags:
  *            type: string[]
  *            default: []
+ *            enum:
+ *              - none
+ *              - critical
+ *              - very-high
+ *              - high
+ *              - medium
+ *              - low
+ *              - very-low
  *         assignees:
  *            type: string[]
  *            items:
@@ -63,7 +72,7 @@ const TaskModel = generateModel<TaskDoc>("Task", {
   status: {
     type: String,
     enum: Object.values(TaskStatus),
-    default: TaskStatus.Pending,
+    default: TaskStatus.Todo,
     required: true,
   },
   tags: {
@@ -77,6 +86,7 @@ const TaskModel = generateModel<TaskDoc>("Task", {
   },
   priority: {
     type: String,
+    enum: PriorityTask,
     required: false,
   },
   dueDate: {

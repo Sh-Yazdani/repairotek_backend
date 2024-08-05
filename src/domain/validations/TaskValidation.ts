@@ -1,5 +1,6 @@
 import Joi from "joi";
 import { TaskStatus } from "../../utils/constant/enums/StatusTask";
+import { PriorityTask } from "../../utils/constant/PriorityTask";
 
 const TaskValidationSchema = Joi.object({
   title: Joi.string().required().messages({
@@ -21,7 +22,9 @@ const TaskValidationSchema = Joi.object({
     "array.base": "Tags should be an array",
     "string.base": "Each tag should be a string",
   }),
-  priority: Joi.string().optional(),
+  priority: Joi.string()
+    .optional()
+    .valid(...PriorityTask),
   dueDate: Joi.string().optional(),
   assignees: Joi.array().items(Joi.string()).optional().messages({
     "array.base": "Assignees should be an array",
@@ -49,7 +52,9 @@ const TaskPatchValidationSchema = Joi.object({
     "array.base": "Tags should be an array",
     "string.base": "Each tag should be a string",
   }),
-  priority: Joi.string().optional(),
+  priority: Joi.string()
+    .optional()
+    .valid(...PriorityTask),
   dueDate: Joi.string().optional(),
   assignees: Joi.array().items(Joi.string()).optional().messages({
     "array.base": "Assignees should be an array",
