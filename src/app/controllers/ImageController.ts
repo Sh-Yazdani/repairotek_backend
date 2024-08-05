@@ -8,3 +8,5 @@ class ImageController extends BaseController<ImageDoc> {
     super(ImageService);
   }
 }
+
+export default new ImageController();

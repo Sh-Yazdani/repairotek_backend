@@ -8,3 +8,5 @@ class VideoController extends BaseController<VideoDoc> {
     super(VideoService);
   }
 }
+
+export default new VideoController();
