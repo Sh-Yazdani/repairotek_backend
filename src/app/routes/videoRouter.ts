@@ -51,33 +51,57 @@ videoRouter.get("/videos", VideoController.getAll);
  */
 
 videoRouter.get("/videos/:id", VideoController.getById);
-
 /**
  * @swagger
- * /videos:
+ * /images:
  *   post:
- *     summary: Create a new video
+ *     summary: Create a new Video
  *     tags: [Videos]
  *     requestBody:
  *       required: true
  *       content:
- *         application/json:
+ *         multipart/form-data:
  *           schema:
- *             $ref: '#/components/schemas/VideoInput'
+ *             type: object
+ *             properties:
+ *               image:
+ *                 type: string
+ *                 format: binary
+ *               title:
+ *                  type: string
+ *                  required: true
+ *               location:
+ *                 type: string
+ *                 required: true
+ *               time:
+ *                 type: string
+ *                 format: date-time
+ *                 required: true
+ *               description:
+ *                 type: string
+ *                 required: false
+ *                 default: "image description"
+ *               duration:
+ *                 type:string
+ *                 required: false
  *     responses:
  *       201:
- *         description: The created video
+ *         description: The created Image
  *         content:
  *           application/json:
  *             schema:
- *               $ref: '#/components/schemas/Video'
+ *               $ref: '#/components/schemas/Image'
  *       400:
  *         description: Invalid input
  *       500:
  *         description: Server error
  */
 
-videoRouter.post("/videos", VideoController.create);
+videoRouter.post(
+  "/videos",
+  VideoController.uploader.single("video"),
+  VideoController.create,
+);
 
 /**
  * @swagger
