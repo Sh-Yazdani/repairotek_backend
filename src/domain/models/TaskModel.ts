@@ -34,6 +34,13 @@ import { Schema } from "mongoose";
  *         tags:
  *            type: string[]
  *            default: []
+ *         assignees:
+ *            type: string[]
+ *            items:
+ *              type: string
+ *            default: []
+ *            description: List of User IDs.
+ *            example: [60c72b2f9b1e8c6f2f8a5e56, 60c72b2f9b1e8c6f2f8a5e55]            
  *         priority:
  *              type: string
  *         dueDate:
@@ -63,7 +70,7 @@ const TaskModel = generateModel<TaskDoc>("Task", {
    type: [
       {
         type: String,
-        ref: "User",
+        required:false
       },
     ],
     default: [],
@@ -83,6 +90,7 @@ const TaskModel = generateModel<TaskDoc>("Task", {
         ref: "User",
       },
     ],
+    required:false,
     default: [],
   },
 });
