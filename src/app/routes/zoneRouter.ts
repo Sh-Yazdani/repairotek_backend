@@ -114,7 +114,7 @@ zoneRouter.post("/zones", ZoneController.create);
  *         description: Zone not found
  */
 
-zoneRouter.put("/zones/:id", ZoneController.update);
+zoneRouter.put("/zones/:id", ZoneController.edit);
 zoneRouter.patch("/zones/:id", ZoneController.edit);
 
 /**

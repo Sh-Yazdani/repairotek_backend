@@ -114,7 +114,7 @@ provinceRouter.post("/provinces", ProvinceController.create);
  *         description: Province not found
  */
 
-provinceRouter.put("/provinces/:id", ProvinceController.update);
+provinceRouter.put("/provinces/:id", ProvinceController.edit);
 provinceRouter.patch("/provinces/:id", ProvinceController.edit);
 
 /**
@@ -141,4 +141,3 @@ provinceRouter.patch("/provinces/:id", ProvinceController.edit);
 provinceRouter.delete("/provinces/:id", ProvinceController.delete);
 
 export default provinceRouter;
-

@@ -114,7 +114,7 @@ galleryRouter.post("/galleries", GalleryController.create);
  *         description: Gallery not found
  */
 
-galleryRouter.put("/galleries/:id", GalleryController.update);
+galleryRouter.put("/galleries/:id", GalleryController.edit);
 galleryRouter.patch("/galleries/:id", GalleryController.edit);
 
 /**

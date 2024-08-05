@@ -116,7 +116,7 @@ employeeRouter.post("/employees", EmployeeController.create);
  *       500:
  *         description: Server error
  */
-employeeRouter.put("/employees/:id", EmployeeController.update);
+employeeRouter.put("/employees/:id", EmployeeController.edit);
 employeeRouter.patch("/employees/:id", EmployeeController.edit);
 
 /**
@@ -142,5 +142,3 @@ employeeRouter.patch("/employees/:id", EmployeeController.edit);
 employeeRouter.delete("/employees/:id", EmployeeController.delete);
 
 export default employeeRouter;
-
-

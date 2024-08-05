@@ -120,7 +120,7 @@ jobRouter.post("/jobs", JobController.create);
  *         description: Server error
  */
 
-jobRouter.put("/jobs/:id", JobController.update);
+jobRouter.put("/jobs/:id", JobController.edit);
 jobRouter.patch("/jobs/:id", JobController.edit);
 
 /**

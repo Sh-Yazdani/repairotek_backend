@@ -29,7 +29,7 @@ const EmployeeValidationSchema = Joi.object({
   profilePhoto: Joi.string().optional().messages({
     "string.base": "Profile photo should be a string",
   }),
-  roleId: Joi.string().hex().length(24).required().messages({
+  roleId: Joi.string().required().messages({
     "string.base": "Role ID should be a string",
     "any.required": "Role ID is required",
   }),
@@ -113,7 +113,7 @@ const EmployeePatchValidationSchema = Joi.object({
   profilePhoto: Joi.string().optional().messages({
     "string.base": "Profile photo should be a string",
   }),
-  roleId: Joi.string().hex().length(24).optional().messages({
+  roleId: Joi.string().optional().messages({
     "string.base": "Role ID should be a string",
   }),
   password: Joi.string().optional().messages({

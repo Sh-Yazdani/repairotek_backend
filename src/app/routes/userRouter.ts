@@ -139,7 +139,7 @@ userRouter.post("/users", UserController.create);
  *         description: User not found
  */
 
-userRouter.put("/users/:id", UserController.update);
+userRouter.put("/users/:id", UserController.edit);
 userRouter.patch("/users/:id", UserController.edit);
 
 /**
