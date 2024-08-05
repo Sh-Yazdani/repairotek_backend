@@ -19,14 +19,14 @@ import { Multer } from "multer";
 
 dotenv.config();
 const app: Application = express();
-const sessionMiddleware = session({
-  //To do
-  // const jwtSecret = process.env.JWT_SECRET || "your_jwt_secret";
+// const sessionMiddleware = session({
+//   //To do
+//   // const jwtSecret = process.env.JWT_SECRET || "your_jwt_secret";
 
-  secret: "mysecretkey",
-  resave: false,
-  saveUninitialized: false,
-});
+//   secret: "mysecretkey",
+//   resave: false,
+//   saveUninitialized: false,
+// });
 
 connentDB();
 const upload: Multer = setupFileUpload();
@@ -54,7 +54,7 @@ app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 app.use(express.static(path.join(__dirname, "../../public")));
 
 app.use("/api/v2", indexRouter);
-app.use(sessionMiddleware);
+// app.use(sessionMiddleware);
 app.use(errorHandlerMiddleware);
 
 export default app;
