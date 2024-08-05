@@ -7,3 +7,5 @@ class VideoRepository extends BaseRepository<VideoDoc> {
     super(VideoModel);
   }
 }
+
+export default new VideoRepository();

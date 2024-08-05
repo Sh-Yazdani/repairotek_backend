@@ -17,3 +17,5 @@ const VideoPatchValidationSchema = Joi.object({
   location: Joi.string().required(),
   time: Joi.date().required(),
 });
+
+export { VideoCreationValidationSchema, VideoPatchValidationSchema };
