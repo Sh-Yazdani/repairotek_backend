@@ -1,6 +1,7 @@
 import { TaskDoc } from "../docs/Task";
 import { generateModel } from "../../utils/generators/modelGenerator";
 import { TaskStatus } from "../../utils/constant/enums/StatusTask";
+import { Schema } from "mongoose";
 
 /**
  * @swagger
@@ -30,12 +31,12 @@ import { TaskStatus } from "../../utils/constant/enums/StatusTask";
  *             - InProgress
  *             - Completed
  *            default: "Pending"
- *           tags:
+ *         tags:
  *            type: string[]
  *            default: []
- *          priority:
+ *         priority:
  *              type: string
- *           priority:
+ *         dueDate:
  *             type: string
  */
 
@@ -58,12 +59,15 @@ const TaskModel = generateModel<TaskDoc>("Task", {
     default: TaskStatus.Pending,
     required: true,
   },
-  tags: [
-    {
-      type: String,
-      required: false,
-    },
-  ],
+  tags: {
+   type: [
+      {
+        type: String,
+        ref: "User",
+      },
+    ],
+    default: [],
+  },
   priority: {
     type: String,
     required: false,
@@ -71,6 +75,15 @@ const TaskModel = generateModel<TaskDoc>("Task", {
   dueDate: {
     type: String,
     required: false,
+  },
+  assignees: {
+    type: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+    default: [],
   },
 });
 

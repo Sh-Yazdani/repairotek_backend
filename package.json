@@ -7,7 +7,7 @@
     "clean": "rm -rf dist",
     "build": "tsc",
     "start": "cross-env ENV_MODE=production node dist/index.js",
-    "dev": "cross-env ENV_MODE=production tsx watch -r tsconfig-paths/register src/index.ts",
+    "dev": "cross-env ENV_MODE=develop tsx watch -r tsconfig-paths/register src/index.ts",
     "test": "cross-env ENV_MODE=test mocha -r ts-node/register 'test/**/*.test.ts'",
     "generate:doc": "ts-node ./scripts/main.ts",
     "generate:model": "ts-node ./scripts/main.ts",
@@ -19,6 +19,7 @@
     "generate:seeder": "ts-node ./scripts/main.ts",
     "generate:all": "ts-node ./scripts/main.ts",
     "seed": "ts-node src/domain/seeders/index.ts",
+    "seed-prod": "ts-node src/domain/seeders/index.ts",
     "seed:zone": "ts-node src/domain/seeders/insertZone.ts",
     "generate:swagger": "ts-node ./scripts/swagger/generateSwagger.ts"
   },
