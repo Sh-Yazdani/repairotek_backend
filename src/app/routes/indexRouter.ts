@@ -33,6 +33,8 @@ import materialRouter from "./materialRouter";
 import jobRouter from "./jobRouter";
 import roadRouter from "./roadRouter";
 import operatorRouter from "./operatorRouter";
+import imageRouter from "./imageRouter";
+import videoRouter from "./videoRouter";
 const indexRouter = express.Router();
 
 /**
@@ -43,6 +45,8 @@ const indexRouter = express.Router();
  */
 
 indexRouter.use(authRouter);
+indexRouter.use(imageRouter);
+indexRouter.use(videoRouter);
 indexRouter.use(adminRouter);
 indexRouter.use(injuryEmployeeReportRouter);
 indexRouter.use(materialRouter);
