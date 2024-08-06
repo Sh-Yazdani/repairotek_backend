@@ -14,7 +14,17 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  *         - mediaName
  *         - mediaUrl
  *       properties:
- *
+ *         id:
+ *           type: string
+ *           description: Unique identifier for the admin
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the admin was created
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the admin was last updated
  *         projectId:
  *           type: string
  *           format: ObjectId

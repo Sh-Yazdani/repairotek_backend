@@ -10,7 +10,17 @@ import { Schema } from "mongoose";
  *       type: object
  *       description: Schema for user permissions on a resource
  *       properties:
- *
+ *         id:
+ *           type: string
+ *           description: Unique identifier for the admin
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the admin was created
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the admin was last updated
  *         userId:
  *           type: string
  *           format: objectId
@@ -41,7 +51,6 @@ import { Schema } from "mongoose";
  *         - userId
  *         - resourceId
  */
-
 const PermissionModel = generateModel<PermissionDoc>("Permission", {
   userId: { type: Schema.Types.ObjectId, ref: "User", required: true },
   resourceId: { type: Schema.Types.ObjectId, ref: "Resource", required: true },
