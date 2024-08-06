@@ -77,8 +77,7 @@ import { VideoDoc } from "../docs/Video";
  *         description: "Beautiful sunset timelapse captured at Malibu Beach"
  */
 
-
-const VideoModel = generateModel<VideoDoc>("Image", {
+const VideoModel = generateModel<VideoDoc>("Video", {
   title: {
     type: String,
     required: true,

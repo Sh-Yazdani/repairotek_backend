@@ -7,3 +7,4 @@ class ImageRepository extends BaseRepository<ImageDoc> {
     super(ImageModel);
   }
 }
+export default new ImageRepository();
