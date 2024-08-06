@@ -71,8 +71,8 @@ indexRouter.use(projectGallerySubjectRouter);
 // indexRouter.use(userZoneRouter); // Uncomment and provide relevant details if needed
 indexRouter.use(resourceRouter);
 indexRouter.use(permissionRouter);
-indexRouter.use(videoRouter);
-indexRouter.use(imageRouter);
+// indexRouter.use(videoRouter);
+// indexRouter.use(imageRouter);
 
 /**
  * @swagger
