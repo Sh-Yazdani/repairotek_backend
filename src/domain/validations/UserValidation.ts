@@ -11,12 +11,12 @@ const UserValidationSchema = Joi.object({
   firstName: Joi.string().required(),
   lastName: Joi.string().required(),
   email: Joi.string().email().required(),
-  address: Joi.string(),
-  telephone: Joi.string(),
+  address: Joi.string().optional(),
+  telephone: Joi.string().optional(),
   mobile: Joi.number().required(),
-  nationalId: Joi.number().required(),
-  lastActivity: Joi.number().required(),
-  profilePhoto: Joi.string(),
+  nationalId: Joi.number().optional(),
+  lastActivity: Joi.number().optional(),
+  profilePhoto: Joi.string().optional,
   roleId: Joi.string().required(),
   gender: Joi.string()
     .valid(...["male", "female"])
@@ -24,7 +24,7 @@ const UserValidationSchema = Joi.object({
   password: Joi.string().required(),
   permissions: Joi.array()
     .items(Joi.string().custom(objectIdValidator, "ObjectID validation"))
-    .required(),
+    .optional(),
   // password: Joi.string().pattern(new RegExp("^[a-zA-Z0-9]{8,30}$")).required(),
 });
 
