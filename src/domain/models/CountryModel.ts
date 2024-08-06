@@ -10,15 +10,15 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  *       properties:
  *         id:
  *           type: string
- *           description: Unique identifier for the admin
+ *           description: Unique identifier for the Country
  *         createdAt:
  *           type: string
  *           format: date-time
- *           description: Timestamp when the admin was created
+ *           description: Timestamp when the Country was created
  *         updatedAt:
  *           type: string
  *           format: date-time
- *           description: Timestamp when the admin was last updated
+ *           description: Timestamp when the Country was last updated
  *         geonameId:
  *           type: number
  *           description: Unique Geoname ID of the country

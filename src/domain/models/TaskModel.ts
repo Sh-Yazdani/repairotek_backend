@@ -15,6 +15,17 @@ import { TagTask } from "../../utils/constant/TagTask";
  *        - title
  *        - status
  *       properties:
+ *         id:
+ *           type: string
+ *           description: Unique identifier for the Task
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the Task was created
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the Task was last updated
  *         title:
  *            type: string
  *            description: Title of the task

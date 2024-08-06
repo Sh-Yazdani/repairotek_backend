@@ -18,18 +18,21 @@ import { generateCode } from "../../utils/functions/generateCode";
  *           properties:
  *             id:
  *               type: string
- *               description: Unique identifier for the admin
+ *               description: Unique identifier for the Employee
  *             createdAt:
  *               type: string
  *               format: date-time
- *               description: Timestamp when the admin was created
+ *               description: Timestamp when the Employee was created
  *             updatedAt:
  *               type: string
  *               format: date-time
- *               description: Timestamp when the admin was last updated
+ *               description: Timestamp when the Employee was last updated
  *             employeeCode:
  *               type: number
  *               description: Unique code assigned to the employee
+ *             nationalId:
+ *               type: string
+ *               description: National ID of the user (optional)
  *             hireDate:
  *               type: string
  *               format: date
@@ -93,6 +96,7 @@ import { generateCode } from "../../utils/functions/generateCode";
  *         contractType: Permanent
  *         bankAccountInfo: '1234567890'
  *         insuranceNumber: 987654321
+ *         nationalId: 'B98765432'
  */
 
 ///////////// Discriminat //////////////////

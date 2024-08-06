@@ -16,15 +16,15 @@ import { MaterialDoc } from "../docs/Material";
  *       properties:
  *         id:
  *           type: string
- *           description: Unique identifier for the admin
+ *           description: Unique identifier for the Material
  *         createdAt:
  *           type: string
  *           format: date-time
- *           description: Timestamp when the admin was created
+ *           description: Timestamp when the Material was created
  *         updatedAt:
  *           type: string
  *           format: date-time
- *           description: Timestamp when the admin was last updated
+ *           description: Timestamp when the Material was last updated
  *         name:
  *           type: string
  *           description: Name of the material

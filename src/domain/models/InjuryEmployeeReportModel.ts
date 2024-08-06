@@ -23,15 +23,15 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  *       properties:
  *         id:
  *           type: string
- *           description: Unique identifier for the report
+ *           description: Unique identifier for the Injury Employee Report
  *         createdAt:
  *           type: string
  *           format: date-time
- *           description: Timestamp when the report was created
+ *           description: Timestamp when the Injury Employee Report was created
  *         updatedAt:
  *           type: string
  *           format: date-time
- *           description: Timestamp when the report was last updated
+ *           description: Timestamp when the Injury Employee Report was last updated
  *         title:
  *           type: string
  *           description: Title of the report

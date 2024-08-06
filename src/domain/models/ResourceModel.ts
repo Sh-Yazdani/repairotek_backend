@@ -10,6 +10,17 @@ import { ResourceDoc } from "../docs/Resource";
  *       required:
  *         - name
  *       properties:
+ *         id:
+ *           type: string
+ *           description: Unique identifier for the Resource
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the Resource was created
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the Resource was last updated
  *         name:
  *           type: string
  *           description: Name of the resource
@@ -19,6 +30,7 @@ import { ResourceDoc } from "../docs/Resource";
  *           description: Description of the resource
  *           required: false
  */
+
 
 const ResourceModel = generateModel<ResourceDoc>("Resource", {
   name: { type: String, required: true, unique: true },

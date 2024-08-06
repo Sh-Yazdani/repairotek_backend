@@ -21,15 +21,15 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  *       properties:
  *         id:
  *           type: string
- *           description: Unique identifier for the report
+ *           description: Unique identifier for the Daily Report
  *         createdAt:
  *           type: string
  *           format: date-time
- *           description: Timestamp when the report was created
+ *           description: Timestamp when the Daily Report was created
  *         updatedAt:
  *           type: string
  *           format: date-time
- *           description: Timestamp when the report was last updated
+ *           description: Timestamp when the Daily Report was last updated
  *         title:
  *           type: string
  *           description: Title of the report

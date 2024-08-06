@@ -11,15 +11,15 @@ import { Schema } from "mongoose";
  *       properties:
  *         id:
  *           type: string
- *           description: Unique identifier for the admin
+ *           description: Unique identifier for the Asset Material
  *         createdAt:
  *           type: string
  *           format: date-time
- *           description: Timestamp when the admin was created
+ *           description: Timestamp when the Asset Material was created
  *         updatedAt:
  *           type: string
  *           format: date-time
- *           description: Timestamp when the admin was last updated
+ *           description: Timestamp when the Asset Material was last updated
  *         materialId:
  *           type: string
  *           format: objectId

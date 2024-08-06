@@ -16,15 +16,15 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  *       properties:
  *         id:
  *           type: string
- *           description: Unique identifier for the admin
+ *           description: Unique identifier for the project gallery
  *         createdAt:
  *           type: string
  *           format: date-time
- *           description: Timestamp when the admin was created
+ *           description: Timestamp when the project gallery was created
  *         updatedAt:
  *           type: string
  *           format: date-time
- *           description: Timestamp when the admin was last updated
+ *           description: Timestamp when the project gallery was last updated
  *         projectId:
  *           type: string
  *           format: ObjectId

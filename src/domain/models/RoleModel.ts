@@ -10,6 +10,17 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  *       required:
  *         - name
  *       properties:
+ *         id:
+ *           type: string
+ *           description: Unique identifier for the Role
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the Role was created
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the Role was last updated
  *         name:
  *           type: string
  *           description: Name of the role

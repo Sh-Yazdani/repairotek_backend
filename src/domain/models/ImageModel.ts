@@ -35,6 +35,14 @@ import { Schema } from "mongoose";
  *           type: string
  *           description: Description of the image
  *           default: "image description"
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the image was created
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the image was last updated
  *       example:
  *         id: 60c72b2f9b1d8c001f8e4cda
  *         title: "Sunset at the beach"

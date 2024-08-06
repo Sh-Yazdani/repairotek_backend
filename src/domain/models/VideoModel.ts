@@ -39,6 +39,14 @@ import { VideoDoc } from "../docs/Video";
  *           type: string
  *           description: Description of the video
  *           default: "uploaded video"
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the video was created
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the video was last updated
  *       example:
  *         id: 60c72b2f9b1d8c001f8e4cda
  *         title: "Sunset timelapse"
@@ -69,6 +77,14 @@ import { VideoDoc } from "../docs/Video";
  *         description:
  *           type: string
  *           description: Description of the video
+*         createdAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the video was created
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the video was last updated
  *       example:
  *         title: "Sunset timelapse"
  *         url: "https://example.com/videos/sunset_timelapse.mp4"
