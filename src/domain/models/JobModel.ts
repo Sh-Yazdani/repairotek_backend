@@ -9,7 +9,17 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  *       type: object
  *       description: Schema for job details
  *       properties:
- *
+ *         id:
+ *           type: string
+ *           description: Unique identifier for the admin
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the admin was created
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the admin was last updated
  *         title:
  *           type: string
  *           description: Title of the job

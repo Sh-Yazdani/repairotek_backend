@@ -21,6 +21,17 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  *         - createdBy
  *         - equipmentId
  *       properties:
+ *         id:
+ *           type: string
+ *           description: Unique identifier for the report
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the report was created
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the report was last updated
  *         title:
  *           type: string
  *           description: Title of the report
@@ -71,7 +82,6 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  *         createdBy: "60c72b2f9b1d8c001f8e4cbe"
  *         equipmentId: "60c72b2f9b1d8c001f8e4cbf"
  */
-
 ///////////// Discriminat //////////////////
 const DamageEquipmentReportModel = generateModel<DamageEquipmentReportDoc>(
   "DamageEquipmentReport",

@@ -14,6 +14,17 @@ import { MaterialDoc } from "../docs/Material";
  *       type: object
  *       description: Schema for material details
  *       properties:
+ *         id:
+ *           type: string
+ *           description: Unique identifier for the admin
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the admin was created
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the admin was last updated
  *         name:
  *           type: string
  *           description: Name of the material
@@ -44,7 +55,6 @@ import { MaterialDoc } from "../docs/Material";
  *         - value
  *         - unit
  */
-
 const Unit = ["gr", "Kg", "Tone"];
 
 const MaterialModel = generateModel<MaterialDoc>("Material", {
