@@ -12,15 +12,15 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  *       properties:
  *         id:
  *           type: string
- *           description: Unique identifier for the admin
+ *           description: Unique identifier for the ProjectAssignment
  *         createdAt:
  *           type: string
  *           format: date-time
- *           description: Timestamp when the admin was created
+ *           description: Timestamp when the ProjectAssignment was created
  *         updatedAt:
  *           type: string
  *           format: date-time
- *           description: Timestamp when the admin was last updated
+ *           description: Timestamp when the ProjectAssignment was last updated
  *         projectId:
  *           type: string
  *           format: objectId

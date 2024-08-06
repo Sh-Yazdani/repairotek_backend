@@ -10,6 +10,17 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  *       required:
  *         - name
  *       properties:
+ *         id:
+ *           type: string
+ *           description: Unique identifier for the Road
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the Road was created
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the Road was last updated
  *         name:
  *           type: string
  *           description: The name of the road
@@ -40,7 +51,6 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  * @property {string} [type] - The type of the road
  * @property {string} [description] - Description of the road
  */
-
 const RoadModel = generateModel<RoadDoc>("Road", {
   name: { type: String, required: true },
   length: { type: Number, required: false },

@@ -16,15 +16,15 @@ import UserModel from "./UserModel";
  *           properties:
  *             id:
  *               type: string
- *               description: Unique identifier for the admin
+ *               description: Unique identifier for the Operator
  *             createdAt:
  *               type: string
  *               format: date-time
- *               description: Timestamp when the admin was created
+ *               description: Timestamp when the Operator was created
  *             updatedAt:
  *               type: string
  *               format: date-time
- *               description: Timestamp when the admin was last updated
+ *               description: Timestamp when the Operator was last updated
  *             operatorCode:
  *               type: number
  *               description: Unique code assigned to the operator

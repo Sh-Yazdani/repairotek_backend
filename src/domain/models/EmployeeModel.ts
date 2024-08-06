@@ -18,15 +18,15 @@ import { generateCode } from "../../utils/functions/generateCode";
  *           properties:
  *             id:
  *               type: string
- *               description: Unique identifier for the admin
+ *               description: Unique identifier for the Employee
  *             createdAt:
  *               type: string
  *               format: date-time
- *               description: Timestamp when the admin was created
+ *               description: Timestamp when the Employee was created
  *             updatedAt:
  *               type: string
  *               format: date-time
- *               description: Timestamp when the admin was last updated
+ *               description: Timestamp when the Employee was last updated
  *             employeeCode:
  *               type: number
  *               description: Unique code assigned to the employee

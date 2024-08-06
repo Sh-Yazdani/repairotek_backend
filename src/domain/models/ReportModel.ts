@@ -17,6 +17,17 @@ import { Schema } from "mongoose";
  *         - projectId
  *         - createdBy
  *       properties:
+ *         id:
+ *           type: string
+ *           description: Unique identifier for the report
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the report was created
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
+ *           description: Timestamp when the report was last updated
  *         title:
  *           type: string
  *           description: Title of the report
