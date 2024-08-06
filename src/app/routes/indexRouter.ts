@@ -33,6 +33,8 @@ import materialRouter from "./materialRouter";
 import jobRouter from "./jobRouter";
 import roadRouter from "./roadRouter";
 import operatorRouter from "./operatorRouter";
+import videoRouter from "./videoRouter";
+import imageRouter from "./imageRouter";
 const indexRouter = express.Router();
 
 /**
@@ -69,6 +71,8 @@ indexRouter.use(projectGallerySubjectRouter);
 // indexRouter.use(userZoneRouter); // Uncomment and provide relevant details if needed
 indexRouter.use(resourceRouter);
 indexRouter.use(permissionRouter);
+indexRouter.use(videoRouter);
+indexRouter.use(imageRouter);
 
 /**
  * @swagger
