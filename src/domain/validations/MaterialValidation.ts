@@ -1,6 +1,13 @@
 import Joi from "joi";
+import { generateCode } from "../../utils/functions/generateCode";
 
 const MaterialValidationSchema = Joi.object({
+  materialCode: Joi.string()
+    .optional()
+    .default(() => generateCode("MTR"))
+    .messages({
+      "string.base": "Material code should be a string",
+    }),
   name: Joi.string().required(),
   description: Joi.string().required(),
   pricePerUnit: Joi.number().default(0).min(0),
@@ -12,6 +19,12 @@ const MaterialValidationSchema = Joi.object({
 });
 
 const MaterialPatchValidationSchema = Joi.object({
+  materialCode: Joi.string()
+    .optional()
+    .default(() => generateCode("MTR"))
+    .messages({
+      "string.base": "Material code should be a string",
+    }),
   name: Joi.string().required(),
   description: Joi.string().required(),
   pricePerUnit: Joi.number().default(0).min(0),

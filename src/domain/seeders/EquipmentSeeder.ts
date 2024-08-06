@@ -1,6 +1,7 @@
 import { faker } from "@faker-js/faker";
 import logger from "../../utils/helpers/logger";
 import EquipmentModel from "../models/EquipmentModel";
+import { generateCode } from "../../utils/functions/generateCode";
 
 const roadConstructionEquipments = [
   "Bulldozer",
@@ -33,6 +34,7 @@ export class EquipmentSeeder {
         // const equipment =
         //   roadConstructionEquipments[i % roadConstructionEquipments.length];
         equipment.push({
+          equipmentCode: generateCode("EQP"),
           name: roadConstructionEquipments[i],
           equipmentModel: faker.vehicle.type(),
           description: `

@@ -1,3 +1,4 @@
+import { generateCode } from "../../utils/functions/generateCode";
 import { generateModel } from "../../utils/generators/modelGenerator";
 import { EquipmentDoc } from "../docs/Equipment";
 /**
@@ -11,6 +12,9 @@ import { EquipmentDoc } from "../docs/Equipment";
  *         id:
  *           type: string
  *           description: Unique identifier for the equipment
+ *         equipmentCode:
+ *           type: string
+ *           description: Unique code for the equipment
  *         name:
  *           type: string
  *           description: Name of the equipment
@@ -54,7 +58,12 @@ import { EquipmentDoc } from "../docs/Equipment";
  */
 
 const EquipmentModel = generateModel<EquipmentDoc>("Equipment", {
-  // equipmentCode: { type: String, required: true, unique: true },
+  equipmentCode: {
+    type: String,
+    required: true,
+    unique: true,
+    default: () => generateCode("EQP"),
+  },
   name: { type: String, required: true },
   equipmentModel: { type: String, required: true },
   description: { type: String, required: false },

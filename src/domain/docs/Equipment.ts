@@ -1,7 +1,7 @@
 import { Document } from "mongoose";
 
 export interface EquipmentDoc extends Document {
-  // equipmentCode:string;
+  equipmentCode:string;
   name: string;
   equipmentModel: string;
   description: string;

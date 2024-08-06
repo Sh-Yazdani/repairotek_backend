@@ -1,6 +1,7 @@
 import { faker } from "@faker-js/faker";
 import logger from "../../utils/helpers/logger";
 import MaterialModel from "../models/MaterialModel";
+import { generateCode } from "../../utils/functions/generateCode";
 
 export class MaterialSeeder {
   static removeAllMaterials = async () => {
@@ -65,6 +66,7 @@ export class MaterialSeeder {
       for (let i = 0; i < batchSize; i++) {
         const material = faker.helpers.arrayElement(materialsList);
         materials.push({
+          materialCode: generateCode("MTR"),
           name: material.name,
           description: material.description,
           pricePerUnit: parseFloat(
