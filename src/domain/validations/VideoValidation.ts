@@ -1,6 +1,6 @@
 import Joi from "joi";
 
-const VideoCreationValidationSchema = Joi.object({
+const VideoValidationSchema = Joi.object({
   title: Joi.string().required(),
   url: Joi.string().required(),
   description: Joi.string().default(""),
@@ -17,3 +17,5 @@ const VideoPatchValidationSchema = Joi.object({
   location: Joi.string().required(),
   time: Joi.date().required(),
 });
+
+export { VideoValidationSchema, VideoPatchValidationSchema };

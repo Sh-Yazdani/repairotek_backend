@@ -1,6 +1,6 @@
 import Joi from "joi";
 
-const ImageCreationValidationSchema = Joi.object({
+const ImageValidationSchema = Joi.object({
   title: Joi.string().required(),
   url: Joi.string().required(),
   description: Joi.string().default(""),
@@ -15,3 +15,4 @@ const ImagePatchValidationSchema = Joi.object({
   location: Joi.string().required(),
   time: Joi.date().required(),
 });
+export { ImagePatchValidationSchema, ImageValidationSchema };
