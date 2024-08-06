@@ -30,6 +30,9 @@ import { generateCode } from "../../utils/functions/generateCode";
  *             employeeCode:
  *               type: number
  *               description: Unique code assigned to the employee
+ *             nationalId:
+ *               type: string
+ *               description: National ID of the user (optional)
  *             hireDate:
  *               type: string
  *               format: date
@@ -93,6 +96,7 @@ import { generateCode } from "../../utils/functions/generateCode";
  *         contractType: Permanent
  *         bankAccountInfo: '1234567890'
  *         insuranceNumber: 987654321
+ *         nationalId: 'B98765432'
  */
 
 ///////////// Discriminat //////////////////
