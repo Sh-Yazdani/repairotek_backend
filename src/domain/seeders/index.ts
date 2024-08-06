@@ -38,8 +38,8 @@ const seedDatabase = async () => {
     // await OperatorSeeder.seed();
     // await PermissionSeeder.seed();
 
-    // await MaterialSeeder.seed();
-    // await EquipmentSeeder.seed();
+    await MaterialSeeder.seed();
+    await EquipmentSeeder.seed();
 
     // await ProjectSeeder.seed();
     // await AssetSeeder.seed();

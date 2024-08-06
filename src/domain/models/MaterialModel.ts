@@ -1,3 +1,4 @@
+import { generateCode } from "../../utils/functions/generateCode";
 import { generateModel } from "../../utils/generators/modelGenerator";
 import { MaterialDoc } from "../docs/Material";
 
@@ -17,6 +18,9 @@ import { MaterialDoc } from "../docs/Material";
  *         id:
  *           type: string
  *           description: Unique identifier for the Material
+ *         materialtCode:
+ *           type: string
+ *           description: Unique code for the Material
  *         createdAt:
  *           type: string
  *           format: date-time
@@ -58,7 +62,12 @@ import { MaterialDoc } from "../docs/Material";
 const Unit = ["gr", "Kg", "Tone"];
 
 const MaterialModel = generateModel<MaterialDoc>("Material", {
-  // materialCode: { type: String, required: true, unique: true },
+  materialCode: {
+    type: String,
+    required: true,
+    unique: true,
+    default: () => generateCode("MTR"),
+  },
   name: { type: String, required: true },
   description: { type: String, required: true },
   pricePerUnit: { type: Number, required: false, default: 0, min: 0 },
