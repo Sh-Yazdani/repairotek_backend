@@ -8,9 +8,6 @@ import { EquipmentDoc } from "../docs/Equipment";
  *       type: object
  *       description: Schema for equipment details
  *       properties:
- *         id:
- *           type: string
- *           description: Unique identifier for the equipment
  *         name:
  *           type: string
  *           description: Name of the equipment
@@ -35,6 +32,10 @@ import { EquipmentDoc } from "../docs/Equipment";
  *           type: string
  *           description: Vehicle Identification Number of the equipment
  *           default: "0"
+ *         VRM:
+ *           type: string
+ *           description: Vehicle Identification Number of the equipment
+ *           default: "0"
  *         createdAt:
  *           type: string
  *           format: date-time
@@ -46,9 +47,6 @@ import { EquipmentDoc } from "../docs/Equipment";
  *       required:
  *         - name
  *         - equipmentModel
- *         - count
- *         - Manufacturer
- *         - VIN
  *         - createdAt
  *         - updatedAt
  */
@@ -62,6 +60,7 @@ const EquipmentModel = generateModel<EquipmentDoc>("Equipment", {
   count: { type: Number, required: false, default: 0 },
   Manufacturer: { type: String, required: false },
   VIN: { type: String, required: false, default: "0" },
+  VRM: { type: String, required: false, default: "0" },
 });
 
 export default EquipmentModel;

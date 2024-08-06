@@ -6,6 +6,7 @@ import JobModel from "../models/JobModel";
 import DepartmentModel from "../models/unUse/DepartmentModel";
 import { ContractType } from "../../utils/constant/ContractType";
 import { MaritalStatus } from "../../utils/constant/MaritalStatus";
+import { generateCode } from "../../utils/functions/generateCode";
 
 export class EmployeeSeeder {
   static removeAllEmployees = async () => {
@@ -49,7 +50,7 @@ export class EmployeeSeeder {
           lastActivity: faker.date.recent().getTime(),
           nationalId: faker.number.int({ min: 1000000000, max: 9999999999 }), // Assuming national ID is a 10-digit number
           permissions: [],
-          employeeCode: faker.number.int({ min: 10000 }),
+          employeeCode: generateCode("EMP"),
           // hireDate: faker.date.past(),
           // jobId: job.id,
           // skillDescription: faker.lorem.sentence(),
@@ -70,7 +71,6 @@ export class EmployeeSeeder {
           insuranceNumber: faker.number
             .int({ min: 1000000000, max: 9999999999 })
             .toString(), // Assuming insurance number is a 10-digit number
-          
         });
       }
 

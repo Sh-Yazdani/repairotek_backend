@@ -1,7 +1,5 @@
-import { Schema} from "mongoose";
-import {
-  generateModel,
-} from "../../utils/generators/modelGenerator";
+import { Schema } from "mongoose";
+import { generateModel } from "../../utils/generators/modelGenerator";
 import UserModel from "./UserModel";
 import { EmployeeDoc } from "../docs/Employee";
 import { MaritalStatus } from "../../utils/constant/MaritalStatus";
@@ -17,19 +15,8 @@ import { generateCode } from "../../utils/functions/generateCode";
  *         - $ref: '#/components/schemas/User'
  *         - type: object
  *           properties:
- *             id:
- *               type: string
- *               description: Unique identifier for the admin
- *             createdAt:
- *               type: string
- *               format: date-time
- *               description: Timestamp when the admin was created
- *             updatedAt:
- *               type: string
- *               format: date-time
- *               description: Timestamp when the admin was last updated
  *             employeeCode:
- *               type: number
+ *               type: string
  *               description: Unique code assigned to the employee
  *             hireDate:
  *               type: string
@@ -77,13 +64,13 @@ import { generateCode } from "../../utils/functions/generateCode";
  *       example:
  *         firstName: John
  *         lastName: Doe
- *         gender: Male
+ *         gender: male
  *         email: johndoe@example.com
  *         address: 123 Main St
  *         mobile: '098-765-4321'
  *         roleId: '60c72b2f9b1d8c001f8e4c9e'
  *         password: 'securepassword123'
- *         employeeCode: 1234
+ *         employeeCode: "1234"
  *         hireDate: '2022-01-15'
  *         jobId: '60d21b2f9b1d8c001f8e4c9f'
  *         skillDescription: 'Expert in Node.js and React'
@@ -103,8 +90,8 @@ const EmployeeModel = generateModel<EmployeeDoc>(
     employeeCode: {
       type: String,
       required: true,
+      default: () => generateCode("EMP"),
       unique: true,
-      default: generateCode("E"),
     },
     hireDate: { type: Date, required: false },
     jobId: { type: Schema.Types.ObjectId, ref: "Job", required: false },
@@ -118,7 +105,7 @@ const EmployeeModel = generateModel<EmployeeDoc>(
     insuranceNumber: { type: Number, required: false }, // شماره بیمه
   },
   ["__t", "password"],
-  UserModel
+  UserModel,
 );
 
 export default EmployeeModel;

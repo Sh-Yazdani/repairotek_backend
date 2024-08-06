@@ -1,8 +1,6 @@
 import { AdminDoc } from "../docs/Admin";
 import UserModel from "./UserModel";
-import {
-  generateModel,
-} from "../../utils/generators/modelGenerator";
+import { generateModel } from "../../utils/generators/modelGenerator";
 /**
  * @swagger
  * components:
@@ -21,17 +19,6 @@ import {
  *         - roleId
  *         - password
  *       properties:
- *         id:
- *           type: string
- *           description: Unique identifier for the admin
- *         createdAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the admin was created
- *         updatedAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the admin was last updated
  *         firstName:
  *           type: string
  *           description: First name of the admin
@@ -81,9 +68,6 @@ import {
  *             format: ObjectId
  *           description: List of permission IDs associated with the admin
  *       example:
- *         id: 60c72b2f9b1d8c001f8e4ca1
- *         createdAt: 2021-06-13T18:30:00.000Z
- *         updatedAt: 2021-06-14T18:30:00.000Z
  *         firstName: Jane
  *         lastName: Smith
  *         gender: female
@@ -99,13 +83,12 @@ import {
  *         permissions: ['60c72b2f9b1d8c001f8e4ca0']
  */
 
-
 ///////////// Discriminat //////////////////
 const AdminModel = generateModel<AdminDoc>(
   "Admin",
   {},
   ["__t", "password"],
-  UserModel
+  UserModel,
 );
 
 export default AdminModel;

@@ -10,17 +10,7 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  *       type: object
  *       description: Schema for project assignments
  *       properties:
- *         id:
- *           type: string
- *           description: Unique identifier for the admin
- *         createdAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the admin was created
- *         updatedAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the admin was last updated
+ *
  *         projectId:
  *           type: string
  *           format: objectId
@@ -117,7 +107,7 @@ const ProjectAssignmentModel = generateModel<ProjectAssignmentDoc>(
     ],
     description: { type: String },
     totalEstimatedCountDays: { type: Number, required: false },
-  }
+  },
 );
 
 export default ProjectAssignmentModel;

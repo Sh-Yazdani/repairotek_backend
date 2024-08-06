@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "tsc",
-    "start": "cross-env ENV_MODE=production node dist/index.js",
+    "start": "cross-env ENV_MODE=production tsx watch -r tsconfig-paths/register src/index.ts",
     "dev": "cross-env ENV_MODE=develop tsx watch -r tsconfig-paths/register src/index.ts",
     "test": "cross-env ENV_MODE=test mocha -r ts-node/register 'test/**/*.test.ts'",
     "generate:doc": "ts-node ./scripts/main.ts",
@@ -19,6 +19,7 @@
     "generate:seeder": "ts-node ./scripts/main.ts",
     "generate:all": "ts-node ./scripts/main.ts",
     "seed": "ts-node src/domain/seeders/index.ts",
+    "seed-prod": "ts-node src/domain/seeders/index.ts",
     "seed:zone": "ts-node src/domain/seeders/insertZone.ts",
     "generate:swagger": "ts-node ./scripts/swagger/generateSwagger.ts"
   },
@@ -52,6 +53,8 @@
     "typescript-di": "^0.6.1"
   },
   "dependencies": {
+    "@google-cloud/storage": "^7.12.0",
+    "@types/multer": "^1.4.11",
     "axios": "^1.7.2",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
@@ -65,6 +68,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.2.4",
     "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
     "pino": "^9.1.0",
     "pino-multi-stream": "^6.0.0",
     "pino-pretty": "^11.0.0",

@@ -1,5 +1,3 @@
-
-
 import express from "express";
 import ReportSubjectController from "../controllers/ReportSubjectController";
 
@@ -116,7 +114,7 @@ reportSubjectRouter.post("/reportSubjects", ReportSubjectController.create);
  *         description: Report subject not found
  */
 
-reportSubjectRouter.put("/reportSubjects/:id", ReportSubjectController.update);
+reportSubjectRouter.put("/reportSubjects/:id", ReportSubjectController.edit);
 reportSubjectRouter.patch("/reportSubjects/:id", ReportSubjectController.edit);
 
 /**
@@ -146,4 +144,3 @@ reportSubjectRouter.delete(
 );
 
 export default reportSubjectRouter;
-

@@ -1,4 +1,4 @@
-import bcrypt  from 'bcrypt';
+import bcrypt from "bcrypt";
 import { faker } from "@faker-js/faker";
 import logger from "../../utils/helpers/logger";
 import AdminModel from "../models/AdminModel";
@@ -23,9 +23,9 @@ export class AdminSeeder {
         );
         return;
       }
-   
+
       const admins = [];
-      const password="Admin@1234"
+      const password = "Admin@1234";
       const hashedPassword = await bcrypt.hash(password as string, 10);
       for (let i = 0; i < batchSize; i++) {
         admins.push(
@@ -58,12 +58,27 @@ export class AdminSeeder {
             lastActivity: 5583722709516288,
             nationalId: "4120253267",
             permissions: [],
+          },
+          {
+            firstName: "Carlos",
+            lastName: "Conde",
+            gender: "male",
+            email: "cconde@condeinduservices.com",
+            address: "Apt. 689",
+            telephone: "221.974.4101 x383",
+            mobile: "1-780-453-5196 x59913",
+            profilePhoto: "https://avatars.githubusercontent.com/u/94115881",
+            roleId: adminRole.id,
+            password: hashedPassword,
+            lastActivity: 5583722709516288,
+            nationalId: "4120253267",
+            permissions: [],
           }
         );
       }
 
       await AdminModel.insertMany(admins);
-      logger.info(batchSize + " admins seeded successfully.");
+      logger.info(admins.length + " admins seeded successfully.");
     } catch (error: any) {
       logger.error("Failed to seed admins: " + error.message);
     }

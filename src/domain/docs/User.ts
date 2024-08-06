@@ -7,15 +7,15 @@ export interface UserDoc extends Document {
   lastName: string;
   gender: string;
   email: string;
-  address: string;
-  telephone: string;
+  address?: string;
+  telephone?: string;
   mobile: string;
   profilePhoto: string; // Assuming profile photo is stored as a string (URL or file path)
   roleId: RoleDoc | Schema.Types.ObjectId;
   password: string;
   lastActivity?: number;
   nationalId?: string;
-  permissions: Schema.Types.ObjectId[]; //permissionIds
+  permissions?: Schema.Types.ObjectId[]; //permissionIds
 }
 
 export interface UserInfoDoc {

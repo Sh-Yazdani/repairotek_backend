@@ -10,17 +10,6 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  *       required:
  *         - token
  *       properties:
- *         id:
- *           type: string
- *           description: Unique identifier for the admin
- *         createdAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the admin was created
- *         updatedAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the admin was last updated
  *         token:
  *           type: string
  *           description: The token that has been blacklisted

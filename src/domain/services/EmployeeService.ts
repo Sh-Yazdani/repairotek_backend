@@ -7,5 +7,6 @@ class EmployeeService extends BaseService<EmployeeDoc> {
   constructor() {
     super(EmployeeRepository, EmployeeValidationSchema, EmployeePatchValidationSchema);
   }
+  
 }
 export default new EmployeeService();

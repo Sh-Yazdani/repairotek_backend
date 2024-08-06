@@ -46,6 +46,6 @@ export class UserSeeder {
 
   static seed = async () => {
     await this.removeAllUsers();
-    await this.insertUsers();
+    // await this.insertUsers();
   };
 }

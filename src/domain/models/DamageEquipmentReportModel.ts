@@ -3,7 +3,6 @@ import ReportModel from "./ReportModel";
 import { DamageEquipmentReportDoc } from "../docs/DamageEquipmentReport";
 import { generateModel } from "../../utils/generators/modelGenerator";
 
-
 /**
  * @swagger
  * components:
@@ -22,17 +21,6 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  *         - createdBy
  *         - equipmentId
  *       properties:
- *         id:
- *           type: string
- *           description: Unique identifier for the report
- *         createdAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the report was created
- *         updatedAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the report was last updated
  *         title:
  *           type: string
  *           description: Title of the report
@@ -95,7 +83,7 @@ const DamageEquipmentReportModel = generateModel<DamageEquipmentReportDoc>(
     },
   },
   ["__t"],
-  ReportModel
+  ReportModel,
 );
 
 export default DamageEquipmentReportModel;

@@ -10,17 +10,6 @@ import { ReportSubjectDoc } from "../docs/ReportSubject";
  *       required:
  *         - title
  *       properties:
- *         id:
- *           type: string
- *           description: Unique identifier for the report subject
- *         createdAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the report subject was created
- *         updatedAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the report subject was last updated
  *         title:
  *           type: string
  *           description: Title of the report subject
@@ -34,7 +23,6 @@ import { ReportSubjectDoc } from "../docs/ReportSubject";
  *         title: "Daily"
  *         description: "Report subject related to safety incidents"
  */
-
 
 const types = ["Daily", "Injury Employee", "Damage Equipment"];
 

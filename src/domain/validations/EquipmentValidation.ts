@@ -8,6 +8,7 @@ const EquipmentValidationSchema = Joi.object({
   count: Joi.number().default(0),
   Manufacturer: Joi.string().optional(),
   VIN: Joi.string().default("0"),
+  VRM: Joi.string().default("0"),
 });
 
 const EquipmentPatchValidationSchema = Joi.object({
@@ -17,6 +18,7 @@ const EquipmentPatchValidationSchema = Joi.object({
   pricePerHour: Joi.number().default(0),
   count: Joi.number().default(0),
   Manufacturer: Joi.string().optional(),
-  VIN: Joi.string().default("0"),
+  VIN: Joi.string().default("0").optional(),
+  VRM: Joi.string().default("0").optional(),
 });
 export { EquipmentValidationSchema, EquipmentPatchValidationSchema };

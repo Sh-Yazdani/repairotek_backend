@@ -120,7 +120,7 @@ adminRouter.post("/admins", AdminController.create);
 //  *         description: Server error
 //  */
 
-// adminRouter.put("/admins/:id", AdminController.update);
+// adminRouter.put("/admins/:id", AdminController.edit);
 
 // /**
 //  * @swagger

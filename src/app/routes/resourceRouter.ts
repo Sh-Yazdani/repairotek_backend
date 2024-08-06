@@ -114,7 +114,7 @@ resourceRouter.post("/resources", ResourceController.create);
  *         description: Resource not found
  */
 
-resourceRouter.put("/resources/:id", ResourceController.update);
+resourceRouter.put("/resources/:id", ResourceController.edit);
 resourceRouter.patch("/resources/:id", ResourceController.edit);
 
 /**

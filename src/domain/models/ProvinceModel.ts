@@ -13,17 +13,6 @@ import { Schema } from "mongoose";
  *         - name
  *         - countryId
  *       properties:
- *         id:
- *           type: string
- *           description: Unique identifier for the admin
- *         createdAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the admin was created
- *         updatedAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the admin was last updated
  *         code:
  *           type: number
  *           description: Code of the province

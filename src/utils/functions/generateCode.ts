@@ -1,4 +1,4 @@
-export const generateCode = (firstChars: string, countDigit = 4) => {
+export const generateCode = (firstChars: string, countDigit = 6) => {
   // تولید دو حرف تصادفی
   const letters =
     String.fromCharCode(65 + Math.floor(Math.random() * 26)) +
@@ -11,5 +11,5 @@ export const generateCode = (firstChars: string, countDigit = 4) => {
     -countDigit
   );
 
-  return `${firstChars}${letters}-${digits}`;
+  return `${firstChars}-${digits}`;
 };

@@ -22,7 +22,7 @@ const ${resourceNameLC}Router = express.Router();
 ${resourceNameLC}Router.get("/${resourceNameLC}s/:id", ${resourceNameUC}Controller.getById);
 ${resourceNameLC}Router.get("/${resourceNameLC}s", ${resourceNameUC}Controller.getAll);
 ${resourceNameLC}Router.post("/${resourceNameLC}s", ${resourceNameUC}Controller.create);
-${resourceNameLC}Router.put("/${resourceNameLC}s/:id", ${resourceNameUC}Controller.update);
+${resourceNameLC}Router.put("/${resourceNameLC}s/:id", ${resourceNameUC}Controller.edit);
 ${resourceNameLC}Router.patch("/${resourceNameLC}s/:id", ${resourceNameUC}Controller.edit);
 ${resourceNameLC}Router.delete("/${resourceNameLC}s/:id", ${resourceNameUC}Controller.delete);
 

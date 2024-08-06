@@ -9,17 +9,6 @@ import { Schema } from "mongoose";
  *     AssetMaterial:
  *       type: object
  *       properties:
- *         id:
- *           type: string
- *           description: Unique identifier for the admin
- *         createdAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the admin was created
- *         updatedAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the admin was last updated
  *         materialId:
  *           type: string
  *           format: objectId

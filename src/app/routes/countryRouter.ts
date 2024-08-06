@@ -1,4 +1,3 @@
-
 import express from "express";
 import CountryController from "../controllers/CountryController";
 const countryRouter = express.Router();
@@ -122,7 +121,7 @@ countryRouter.post("/countries", CountryController.create);
  *         description: Server error
  */
 
-countryRouter.put("/countries/:id", CountryController.update);
+countryRouter.put("/countries/:id", CountryController.edit);
 countryRouter.patch("/countries/:id", CountryController.edit);
 
 /**

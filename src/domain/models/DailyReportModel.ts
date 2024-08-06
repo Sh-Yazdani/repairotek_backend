@@ -2,8 +2,6 @@ import { DailyReportDoc } from "../docs/DailyReport";
 import ReportModel from "./ReportModel";
 import { generateModel } from "../../utils/generators/modelGenerator";
 
-
-
 /**
  * @swagger
  * components:
@@ -21,17 +19,6 @@ import { generateModel } from "../../utils/generators/modelGenerator";
  *         - projectId
  *         - createdBy
  *       properties:
- *         id:
- *           type: string
- *           description: Unique identifier for the report
- *         createdAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the report was created
- *         updatedAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the report was last updated
  *         title:
  *           type: string
  *           description: Title of the report
@@ -85,7 +72,7 @@ const DailyReportModel = generateModel<DailyReportDoc>(
   "DailyReport",
   {},
   ["__t"],
-  ReportModel
+  ReportModel,
 );
 
 export default DailyReportModel;

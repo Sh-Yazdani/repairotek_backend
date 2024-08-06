@@ -1,4 +1,3 @@
-
 import express from "express";
 import DailyReportController from "../controllers/DailyReportController";
 const dailyReportRouter = express.Router();
@@ -118,7 +117,7 @@ dailyReportRouter.post("/dailyReports", DailyReportController.create);
  *       500:
  *         description: Server error
  */
-dailyReportRouter.put("/dailyReports/:id", DailyReportController.update);
+dailyReportRouter.put("/dailyReports/:id", DailyReportController.edit);
 dailyReportRouter.patch("/dailyReports/:id", DailyReportController.edit);
 
 /**
@@ -144,5 +143,3 @@ dailyReportRouter.patch("/dailyReports/:id", DailyReportController.edit);
 dailyReportRouter.delete("/dailyReports/:id", DailyReportController.delete);
 
 export default dailyReportRouter;
-
-

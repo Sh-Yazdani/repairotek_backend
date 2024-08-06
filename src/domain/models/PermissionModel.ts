@@ -10,17 +10,7 @@ import { Schema } from "mongoose";
  *       type: object
  *       description: Schema for user permissions on a resource
  *       properties:
- *         id:
- *           type: string
- *           description: Unique identifier for the admin
- *         createdAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the admin was created
- *         updatedAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the admin was last updated
+ *
  *         userId:
  *           type: string
  *           format: objectId

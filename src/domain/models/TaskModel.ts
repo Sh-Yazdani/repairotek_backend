@@ -1,6 +1,9 @@
+import { PriorityTask } from "./../../utils/constant/PriorityTask";
 import { TaskDoc } from "../docs/Task";
 import { generateModel } from "../../utils/generators/modelGenerator";
 import { TaskStatus } from "../../utils/constant/enums/StatusTask";
+import { Schema } from "mongoose";
+import { TagTask } from "../../utils/constant/TagTask";
 
 /**
  * @swagger
@@ -12,17 +15,6 @@ import { TaskStatus } from "../../utils/constant/enums/StatusTask";
  *        - title
  *        - status
  *       properties:
- *         id:
- *           type: string
- *           description: Unique identifier for the admin
- *         createdAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the admin was created
- *         updatedAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the admin was last updated
  *         title:
  *            type: string
  *            description: Title of the task
@@ -37,10 +29,41 @@ import { TaskStatus } from "../../utils/constant/enums/StatusTask";
  *            type: string
  *            description: Status of the task
  *            enum:
- *             - Pending
- *             - InProgress
- *             - Completed
- *            default: "Pending"
+ *              - todo
+ *              - doing
+ *              - done
+ *            default: "doing"
+ *         tags:
+ *            type: string[]
+ *            default: []
+ *            items:
+ *              type: string
+ *              enum:
+ *                - bug
+ *                - change
+ *                - issue
+ *                - meeting
+ *                - request
+ *                - risk
+ *                - ticket
+ *         assignees:
+ *            type: string[]
+ *            items:
+ *              type: string
+ *            default: []
+ *            description: List of User IDs.
+ *            example: [60c72b2f9b1e8c6f2f8a5e56, 60c72b2f9b1e8c6f2f8a5e55]
+ *         priority:
+ *            type: string
+ *            enum:
+ *               - critical
+ *               - very-high
+ *               - high
+ *               - medium
+ *               - low
+ *               - very-low
+ *         dueDate:
+ *             type: string
  */
 
 const TaskModel = generateModel<TaskDoc>("Task", {
@@ -59,8 +82,37 @@ const TaskModel = generateModel<TaskDoc>("Task", {
   status: {
     type: String,
     enum: Object.values(TaskStatus),
-    default: TaskStatus.Pending,
+    default: TaskStatus.Todo,
     required: true,
+  },
+  tags: {
+    type: [
+      {
+        type: String,
+        enum: TagTask,
+        required: false,
+      },
+    ],
+    default: [],
+  },
+  priority: {
+    type: String,
+    enum: PriorityTask,
+    required: false,
+  },
+  dueDate: {
+    type: String,
+    required: false,
+  },
+  assignees: {
+    type: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+    required: false,
+    default: [],
   },
 });
 

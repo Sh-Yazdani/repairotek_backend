@@ -22,10 +22,6 @@ import { generateCode } from "../../utils/functions/generateCode";
  *         - longitude
  *         - latitude
  *       properties:
- *         id:
- *           type: string
- *           description: Unique identifier for the project.
- *           example: 60c72b2f9b1e8c6f2f8a5e5d
  *         projectCode:
  *           type: string
  *           description: The project code, generated automatically.
@@ -62,7 +58,7 @@ import { generateCode } from "../../utils/functions/generateCode";
  *             - cm
  *             - in
  *             - ft
- *           defult: m 
+ *           defult: m
  *           example: m
  *         description:
  *           type: string
@@ -83,7 +79,7 @@ import { generateCode } from "../../utils/functions/generateCode";
  *             - Initiation
  *             - Pre-Construction
  *             - In-Progress
- *             - Compeleted
+ *             - completed
  *           default: Initiation
  *           example: Compeleted
  *         materials:
@@ -120,7 +116,12 @@ import { generateCode } from "../../utils/functions/generateCode";
  */
 
 const ProjectModel = generateModel<ProjectDoc>("Project", {
-  projectCode: { type: String, required: true, default: () => generateCode("PRJ") , unique:true },
+  projectCode: {
+    type: String,
+    required: true,
+    default: () => generateCode("PRJ"),
+    unique: true,
+  },
   adminId: { type: Schema.Types.ObjectId, ref: "Admin", required: true },
   title: { type: String, required: true },
   zoneId: { type: Schema.Types.ObjectId, ref: "Zone", required: true },

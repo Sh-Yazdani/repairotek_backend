@@ -1,7 +1,6 @@
 import { generateModel } from "../../utils/generators/modelGenerator";
 import { ProjectGallerySubjectDoc } from "../docs/ProjectGallerySubject";
 
-
 /**
  * @swagger
  * components:
@@ -11,17 +10,7 @@ import { ProjectGallerySubjectDoc } from "../docs/ProjectGallerySubject";
  *       required:
  *         - title
  *       properties:
- *         id:
- *           type: string
- *           description: Unique identifier for the gallery subject
- *         createdAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the gallery subject was created
- *         updatedAt:
- *           type: string
- *           format: date-time
- *           description: Timestamp when the gallery subject was last updated
+ *
  *         title:
  *           type: string
  *           description: Title of the gallery subject
@@ -38,7 +27,6 @@ import { ProjectGallerySubjectDoc } from "../docs/ProjectGallerySubject";
  *         description: "This subject covers daily project activities."
  */
 
-
 const title = [
   "Daily",
   "Injury Employee",
@@ -53,7 +41,7 @@ const ProjectGallerySubjectModel = generateModel<ProjectGallerySubjectDoc>(
   {
     title: { type: String, required: true },
     description: { type: String, required: false },
-  }
+  },
 );
 
 export default ProjectGallerySubjectModel;
